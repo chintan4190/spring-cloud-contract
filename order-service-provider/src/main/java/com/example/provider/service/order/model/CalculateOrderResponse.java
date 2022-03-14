@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class CreateOrderResponse {
+public class CalculateOrderResponse {
     private Double totalAmount;
     private boolean isAvailable;
 

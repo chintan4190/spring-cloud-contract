@@ -23,7 +23,7 @@ public class MyTest extends BaseTestClass{
 
         // when:
         ResponseOptions response = given().spec(request)
-                .post("/orders");
+                .post("/providers/calculations");
 
         // then:
         assertThat(response.statusCode()).isEqualTo(200);

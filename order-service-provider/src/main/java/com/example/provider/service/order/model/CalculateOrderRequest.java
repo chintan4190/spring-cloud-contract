@@ -6,7 +6,7 @@ import lombok.NonNull;
 
 @Data
 @NoArgsConstructor
-public class CreateOrderRequest {
+public class CalculateOrderRequest {
 
     @NonNull
     private String itemName;

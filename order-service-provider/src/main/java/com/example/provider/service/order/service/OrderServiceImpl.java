@@ -1,7 +1,7 @@
 package com.example.provider.service.order.service;
 
-import com.example.provider.service.order.model.CreateOrderRequest;
-import com.example.provider.service.order.model.CreateOrderResponse;
+import com.example.provider.service.order.model.CalculateOrderRequest;
+import com.example.provider.service.order.model.CalculateOrderResponse;
 import java.util.HashMap;
 import org.springframework.stereotype.Service;
 
@@ -14,15 +14,15 @@ public class OrderServiceImpl {
         ITEM_AMOUNT_MAP.put("car", Double.valueOf(50000));
         ITEM_AMOUNT_MAP.put("laptop", Double.valueOf(1200));
     }
-    public CreateOrderResponse create(CreateOrderRequest createOrderRequest) {
+    public CalculateOrderResponse create(CalculateOrderRequest calculateOrderRequest) {
         //lots of business logic and call to other services...
-        return calculateAmount(createOrderRequest);
+        return calculateAmount(calculateOrderRequest);
     }
 
-    private CreateOrderResponse calculateAmount(CreateOrderRequest request){
+    private CalculateOrderResponse calculateAmount(CalculateOrderRequest request){
         if(ITEM_AMOUNT_MAP.containsKey(request.getItemName())){
-            return new CreateOrderResponse(ITEM_AMOUNT_MAP.get(request.getItemName()), true);
+            return new CalculateOrderResponse(ITEM_AMOUNT_MAP.get(request.getItemName()), true);
         }
-        return new CreateOrderResponse(Double.valueOf(0), false);
+        return new CalculateOrderResponse(Double.valueOf(0), false);
     }
 }
