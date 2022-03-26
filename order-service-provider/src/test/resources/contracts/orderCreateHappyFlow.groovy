@@ -9,7 +9,8 @@ org.springframework.cloud.contract.spec.Contract.make {
         }
         body(
                 itemName: $(anyNonBlankString()),
-                quantity: $(anyPositiveInt())
+                quantity: $(anyPositiveInt()),
+              //  id: $(anyNumber())
         )
     }
     response {
