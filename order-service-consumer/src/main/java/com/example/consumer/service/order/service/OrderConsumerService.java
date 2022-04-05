@@ -26,6 +26,8 @@ public class OrderConsumerService {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("Content-Type", "application/json");
         CreateOrderRequest createOrderRequest = new CreateOrderRequest(orderConsumerRequest.getItemName(),orderConsumerRequest.getQuantity());
+
+        //call to producer
         ResponseEntity<CreateOrderResponse> responseEntity = restTemplate
                 .exchange(orderServiceUrl, HttpMethod.POST, new HttpEntity<>(createOrderRequest, httpHeaders), CreateOrderResponse.class);
         return new OrderConsumerResponse(1l, orderConsumerRequest.getItemName(), responseEntity.getBody().getTotalAmount());
