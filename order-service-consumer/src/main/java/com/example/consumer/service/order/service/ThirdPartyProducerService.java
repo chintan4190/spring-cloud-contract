@@ -4,7 +4,7 @@ import com.example.consumer.service.order.model.CreateOrderRequest;
 import com.example.consumer.service.order.model.CreateOrderResponse;
 import com.example.consumer.service.order.model.OrderConsumerRequest;
 import com.example.consumer.service.order.model.OrderConsumerResponse;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -13,14 +13,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Service
 public class ThirdPartyProducerService {
 
     private final RestTemplate restTemplate;
 
     @Value("${orderservice.url}")
-    private String orderServiceUrl;
+    private  String orderServiceUrl;
 
     public OrderConsumerResponse callProducer(OrderConsumerRequest orderConsumerRequest) {
         HttpHeaders httpHeaders = new HttpHeaders();
