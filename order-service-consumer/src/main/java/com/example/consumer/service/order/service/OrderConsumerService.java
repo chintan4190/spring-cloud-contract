@@ -12,7 +12,9 @@ public class OrderConsumerService {
     private final ThirdPartyProducerService thirdPartyProducerService;
 
     public OrderConsumerResponse createOrder(OrderConsumerRequest orderConsumerRequest){
+        //some business logic for consumer here
 
+        //calling producer service
         return thirdPartyProducerService.callProducer(orderConsumerRequest);
     }
 }
